@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>외국 가곡 가사집</title>
+  <style>
+    body { 
+      background-color: #000080; 
+      color: #ffffff; 
+      font-family: 'Malgun Gothic', sans-serif; 
+      margin: 0; 
+      padding: 20px; 
+    }
+    .chord { 
+      color: #ff0000; 
+      font-weight: bold; 
+      font-size: 1.1em; 
+      margin-right: 2px; 
+    }
+    .page { display: none; }
+    .active { display: block; }
+    h1, h2 { text-align: center; }
+    
+    /* 메인 리스트 디자인 */
+    .song-list { 
+      list-style: none; 
+      padding: 0; 
+      max-width: 600px; 
+      margin: 0 auto; 
+    }
+    .song-list li { 
+      padding: 15px; 
+      margin-bottom: 10px; 
+      background-color: #0000a0; 
+      border-radius: 8px; 
+      font-size: 1.2em; 
+      cursor: pointer; 
+      text-align: center; 
+    }
+    .song-list li:active { background-color: #000050; }
+    
+    /* 뒤로가기 버튼 */
+    .btn-back { 
+      display: block; 
+      margin: 0 auto 20px auto; 
+      padding: 10px 20px; 
+      background-color: #ffffff; 
+      color: #000080; 
+      border: none; 
+      border-radius: 5px; 
+      font-size: 1em; 
+      font-weight: bold; 
+      cursor: pointer; 
+    }
+    
+    /* 가사 영역 */
+    .lyrics-container { 
+      font-size: 1.2em; 
+      line-height: 2.0; 
+      max-width: 600px; 
+      margin: 0 auto; 
+      white-space: pre-wrap; 
+      background-color: #000040; 
+      padding: 20px; 
+      border-radius: 10px; 
+    }
+  </style>
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+      window.scrollTo(0, 0);
+    }
+  </script>
+</head>
+<body>
+
+  <!-- 1. 메인 페이지 -->
+  <div id="main-page" class="page active">
+    <h1>외국 가곡 모음</h1>
+    <ul class="song-list">
+      <li onclick="showPage('song-1')">1. 거룩한 천사의 음성 (Alice Hawthorne)</li>
+      <li onclick="showPage('song-2')">2. 메기의 추억 (Butterfield)</li>
+      <li onclick="showPage('song-3')">3. 언덕위의 집 (Home on the range)</li>
+      <li onclick="showPage('song-4')">4. 오 수제너 (Oh! Susanna)</li>
+      <li onclick="showPage('song-5')">5. 아 목동아 (아일랜드 민요)</li>
+      <li onclick="showPage('song-6')">6. 스와니강의 노래 (Stephen Foster)</li>
+      <li onclick="showPage('song-7')">7. 켄터키 옛집 (Stephen Foster)</li>
+      <li onclick="showPage('song-8')">8. 로렐라이 언덕 (Friedrich Silcher)</li>
+      <li onclick="showPage('song-9')">9. 소나무야 (O TANNENBAUM)</li>
+      <li onclick="showPage('song-10')">10. 보리수 (Schubert)</li>
+      <li onclick="showPage('song-11')">11. 들장미 (베르너 작곡)</li>
+      <li onclick="showPage('song-12')">12. 돌아오라 소렌토로 (Curtis)</li>
+      <li onclick="showPage('song-13')">13. 오 솔레 미오 (O Sole Mio)</li>
+      <li onclick="showPage('song-14')">14. 산타루치아</li>
+      <li onclick="showPage('song-15')">15. 애니로리 (존 스콧)</li>
+    </ul>
+  </div>
+
+  <!-- 2. 개별 노래 페이지들 -->
+  
+  <div id="song-1" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>1. 거룩한 천사의 음성</h2>
+    <div class="lyrics-container">1.
+<span class="chord">A</span>거룩한 천사의 음성 <span class="chord">D</span>내 귀를 두드리<span class="chord">A</span>네
+부드럽게 속삭<span class="chord">D</span>이는 <span class="chord">E</span>앞날의 그 언약<span class="chord">A</span>을
+어두운 밤 지나가고 <span class="chord">E</span>폭풍우 개이면<span class="chord">A</span>은
+동녘엔 광명의 햇빛 눈부시게 비치네
+속삭이는 앞날<span class="chord">E</span>의 보금<span class="chord">A</span>자리 <span class="chord">D</span>즐거움<span class="chord">A</span>이 눈앞<span class="chord">E</span>에 어린<span class="chord">A</span>다.
+
+2.
+저녘놀 서산에 재운 황혼이 찾아와도
+청천에 빛나는 뭇별 이 밤도 명랑하다
+밤깊어 나의 마음 고요히 잠들어도
+희망에 찬 아침 햇빛 창문을 열어주리
+속삭이는 앞날<span class="chord">E</span>의 보금<span class="chord">A</span>자리 <span class="chord">D</span>즐거움<span class="chord">A</span>이 눈앞<span class="chord">E</span>에 어린<span class="chord">A</span>다.</div>
+  </div>
+
+  <div id="song-2" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>2. 메기의 추억</h2>
+    <div class="lyrics-container"><span class="chord">G</span><span class="chord">C</span>옛날에 금잔디 동산<span class="chord">F</span>에 메기 같<span class="chord">C</span>이 앉아서 놀던 <span class="chord">G</span>곳
+물레<span class="chord">C</span>방아소리 들린<span class="chord">F</span>다 메기<span class="chord">C</span>야 내 희미<span class="chord">G</span>한 옛 생<span class="chord">C</span>각<span class="chord">C7</span>
+동산<span class="chord">F</span>수풀은 우거지<span class="chord">C</span>고 장미화<span class="chord">G</span>는 피어 만발하였다
+물레<span class="chord">C</span>방아 소리 그쳤<span class="chord">F</span>다
+메기 내 <span class="chord">C</span>사랑하<span class="chord">G</span>는 메기<span class="chord">C</span>야
+
+옛날의 금잔디 동산에 메기 같이 앉아서 놀던 곳
+물레방아소리 들린다 메기<span class="chord">E</span>야 내 희미<span class="chord">B</span>한 옛 생<span class="chord">E</span>각<span class="chord">E7</span>
+지금 우리는 늙어지고 메기 머린 백발이 다 되었네
+옛날의 노래를 부르자 메기 내 사랑하는 메기야
+
+I wandered today to the hills, Maggie
+To watch the scene below
+The creek and the creaking old mill, Maggie
+As we used to long, long ago
+The green grove has gone from the hills, Maggie
+Where first, the daisies sprung
+The creaking old mill is still, Maggie
+Since you and I were young</div>
+  </div>
+
+  <div id="song-3" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>3. 언덕위의 집 (Home on the range)</h2>
+    <div class="lyrics-container"><span class="chord">B</span><span class="chord">E</span><span class="chord">F#</span><span class="chord">G#</span><span class="chord">E</span>
+oh give me a home where <span class="chord">A</span>the buf-fa-lo roam where the <span class="chord">E</span>deer and the an-te-lope <span class="chord">B</span>play
+where <span class="chord">E</span>sel-dom is heard a dis-<span class="chord">A</span>cour-ag-ing word and the <span class="chord">E</span>skys are not <span class="chord">B</span>cloudy all <span class="chord">E</span>day
+
+home home on the range where the deer and the an-te-lope <span class="chord">B</span>play
+where <span class="chord">E</span>sel-dom is heard a dis-<span class="chord">A</span>cour-ag-ing word and the <span class="chord">E</span>skys are not <span class="chord">B</span>cloudy all <span class="chord">E</span>day</div>
+  </div>
+
+  <div id="song-4" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>4. 오 수제너</h2>
+    <div class="lyrics-container">1.
+<span class="chord">E</span>멀고먼 앨라배마 나의 고향은 그<span class="chord">B</span>곳
+벤조를 <span class="chord">E</span>메고 나는 너를 찾아왔노라
+<span class="chord">A</span>오 수제너여 <span class="chord">E</span>노래부르<span class="chord">B</span>자
+멀고먼 <span class="chord">E</span>앨라배나 나의 <span class="chord">B</span>고향은 그<span class="chord">E</span>곳
+ 
+2.
+<span class="chord">E</span>떠나온 고향 하늘 가에 구름은 일<span class="chord">B</span>어
+비 끼는 <span class="chord">E</span>저녁 햇살 그윽하게 비치네
+<span class="chord">A</span>오 수제너여 <span class="chord">E</span>노래부르<span class="chord">B</span>자
+멀고먼 <span class="chord">E</span>앨라배나 나의 <span class="chord">B</span>고향은 그<span class="chord">E</span>곳</div>
+  </div>
+
+  <div id="song-5" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>5. 아 목동아</h2>
+    <div class="lyrics-container"><span class="chord">E</span><span class="chord">A</span><span class="chord">E7</span>아 목동<span class="chord">A</span>들의 피리소리<span class="chord">D</span>들은
+산골짝<span class="chord">A</span>마다 울려 나오<span class="chord">E</span>고
+여름은 <span class="chord">A</span>가고 꽃은 떨어<span class="chord">D</span>지니
+너도 가<span class="chord">A</span>고 또 <span class="chord">E</span>나도 가야<span class="chord">A</span>지
+
+<span class="chord">E</span>저 목장<span class="chord">A</span>에는 <span class="chord">E</span>여름철이 <span class="chord">A</span>오고
+<span class="chord">E</span>산골짝<span class="chord">A</span>마다 <span class="chord">E</span>눈이 덮여도
+나 항상 <span class="chord">A</span>오래 <span class="chord">E</span>여기 살<span class="chord">A</span>리라
+<span class="chord">E</span>아 목동<span class="chord">A</span>아 아 목동아 내 <span class="chord">D</span>사<span class="chord">E</span>랑<span class="chord">A</span>아
+
+그 고운 꽃은 떨어져서 죽고
+나 또한 죽어 땅에 묻히면
+나 자는 곳을 돌아보아 주며
+거룩하다고 불러 주어요
+네 고운 목소리를 들으면은
+내 묻힌 무덤 따뜻하리라
+너 항상 나를 사랑하여 주면
+네가 올 때까지 내가 잘 자리라</div>
+  </div>
+
+  <div id="song-6" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>6. 스와니강의 노래 (1851)</h2>
+    <div class="lyrics-container"><span class="chord">A</span>머나먼 저곳 <span class="chord">D</span>스와니 강물 <span class="chord">A</span>그리워<span class="chord">E</span>라
+<span class="chord">A</span>날 사랑하는 <span class="chord">D</span>부모형제 <span class="chord">A</span>이 몸을 <span class="chord">E</span>기다<span class="chord">A</span>려
+<span class="chord">E</span>이 세상에 <span class="chord">A</span>정처 없는 <span class="chord">D</span>나그네의 <span class="chord">E</span>길
+<span class="chord">A</span>아 그리워라 <span class="chord">D</span>나 살던 곳 <span class="chord">A</span>멀고먼 <span class="chord">E</span>옛 고<span class="chord">A</span>향</div>
+  </div>
+
+  <div id="song-7" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>7. 켄터키 옛집 (1853)</h2>
+    <div class="lyrics-container"><span class="chord">A</span>켄터키 옛집에 <span class="chord">D</span>햇빛 비치<span class="chord">A</span>어 여름날 검둥이 시<span class="chord">E</span>절
+저 <span class="chord">A</span>새는 긴 날을 <span class="chord">D</span>노래 부를 <span class="chord">A</span>때 옥수수는 벌써 <span class="chord">E</span>익었<span class="chord">A</span>네
+마루를 구르며 <span class="chord">D</span>노는 어린 <span class="chord">A</span>것 세상을 모르고 노<span class="chord">E</span>나
+어<span class="chord">A</span>려운 시절이 <span class="chord">D</span>닥쳐오리<span class="chord">A</span>니 잘 쉬어라 켄터<span class="chord">E</span>키 옛<span class="chord">A</span>집
+
+잘 쉬<span class="chord">D</span>어라 <span class="chord">A</span>쉬어 울<span class="chord">D</span>지 말<span class="chord">A</span>고 쉬어 그리운 저 켄터키
+<span class="chord">D</span>옛집 위하<span class="chord">A</span>여 머나먼 집 노래<span class="chord">E</span>를 부르<span class="chord">A</span>네...</div>
+  </div>
+
+  <div id="song-8" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>8. 로렐라이 언덕 (1823)</h2>
+    <div class="lyrics-container"><span class="chord">A</span>옛날부터 전해오<span class="chord">D</span>는 쓸<span class="chord">A</span>쓸한 <span class="chord">E</span>이 말<span class="chord">A</span>이
+가슴속에 그립게<span class="chord">Gm</span>도 끝<span class="chord">A</span>없이 <span class="chord">E</span>떠오른<span class="chord">A</span>다.
+구<span class="chord">E</span>름 걷힌 하늘아래 고요한 라인 강
+저<span class="chord">A</span>녁 빛이 찬란하<span class="chord">D</span>다. 로<span class="chord">A</span>렐라<span class="chord">E</span>이 언<span class="chord">A</span>덕
+
+저편언덕 바위 위에 어여쁜 그 소녀
+황금빛이 빛나는 옷. 보기에도 황홀해.
+고운 머리 빗으면서 부르는 그 노래
+마음 끄는 이상한 힘. 로렐라이 언덕</div>
+  </div>
+
+  <div id="song-9" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>9. 소나무야 (O TANNENBAUM)</h2>
+    <div class="lyrics-container"><span class="chord">D</span>소나무야 <span class="chord">A</span>소<span class="chord">D</span>나무야 언제나 <span class="chord">A</span>푸른 <span class="chord">D</span>네 빛
+쓸쓸한 <span class="chord">G</span>가을 날이나 눈보라<span class="chord">A</span>치는 날에<span class="chord">D</span>도
+소나무야 <span class="chord">A</span>소<span class="chord">D</span>나무야 변하지 <span class="chord">A</span>않는 네<span class="chord">D</span>빛
+
+소나무여 소나무여 변함이 <span class="chord">D</span>없는 그 <span class="chord">G</span>빛
+무더운 <span class="chord">C</span>여름 날<span class="chord">D</span>에도 눈보라 겨울 날에<span class="chord">G</span>도
+소나무여 소나무여 변함이 <span class="chord">D</span>없는 그 <span class="chord">G</span>빛
+소나무여 소나무여 변함이 없는 그 빛
+
+O Tannenbaum, o Tannenbaum
+(Wie treu sind deine Blätter)
+Du grünst nicht nur zur Sommerzeit,
+Nein, auch im Winter, (wenn es schneit.)
+O Tannenbaum, o Tannenbaum,
+(Wie treu sind deine Blätter.)</div>
+  </div>
+
+  <div id="song-10" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>10. 보리수 (슈베르트)</h2>
+    <div class="lyrics-container">성<span class="chord">D</span>문 앞 샘물 곁에 서 <span class="chord">A</span>있는 보리<span class="chord">D</span>수
+나는 그 그늘 아래 단<span class="chord">A</span>꿈을 보았<span class="chord">D</span>네
+가<span class="chord">A</span>지에 희망의 <span class="chord">D</span>말 새<span class="chord">G</span>기어놓고<span class="chord">A</span>서
+기쁘나 슬플 때<span class="chord">D</span>나 찾아온 <span class="chord">A</span>나무 <span class="chord">D</span>밑
+찾아온 <span class="chord">A</span>나무 <span class="chord">D</span>밑
+
+오늘 밤도 거니네 보리수 곁으로
+캄캄한 어둠 속에 눈 감아보았네
+가지는 흔들려서 말하는 것같이
+그대여, 이곳에 와서 안식을 찾아라 안식을 찾아라
+
+Am Brunnen vor dem Tore Da steht ein Lindenbaum
+Ich träumt in seinem Schatten So manchen süßen Traum.
+Ich schnitt in seine Rinde So manches liebe Wort;
+Es zog in Freud' und Leide Zu ihm mich immer fort
+Zu ihm mich immer fort</div>
+  </div>
+
+  <div id="song-11" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>11. 들장미</h2>
+    <div class="lyrics-container">웬 아이가 <span class="chord">G</span>보았네 <span class="chord">C</span>들에 피인 장<span class="chord">F</span>미<span class="chord">G</span>화
+갓 피<span class="chord">C</span>어난 어여쁜 그 향기에 <span class="chord">F</span>탐나<span class="chord">G</span>서
+<span class="chord">C</span>정신없이 보<span class="chord">G</span>네 <span class="chord">C</span>장미<span class="chord">F</span>화야 <span class="chord">G</span>장미<span class="chord">C</span>화
+들에 피인 <span class="chord">G</span>장미<span class="chord">C</span>화
+
+예쁜 가지 꺽으라 들에 핀 장미화
+꺾으려면 꺽어라 네 선물로 꺽어라
+나는 너를 찌르리 장미화야 장미화
+들에 피인 장미화
+
+Sah ein Knab ein Röslein stehn Röslein auf der Heiden
+War so jung und morgenschön Lief er schnell, es nah zu sehn
+Sahs mit vielen Freuden Röslein, Röslein, Röslein rot
+Röslein auf der Heiden</div>
+  </div>
+
+  <div id="song-12" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>12. 돌아오라 소렌토로</h2>
+    <div class="lyrics-container"><span class="chord">Am</span>아름다운 저 바다와 <span class="chord">Dm</span>그리운 저 빛난 <span class="chord">Am</span>햇빛
+<span class="chord">F</span>내 맘속에 잠시<span class="chord">Am</span>라도 <span class="chord">E</span>떠날 때가 없도<span class="chord">A</span>다.
+향기로운 꽃 만<span class="chord">D</span>발한 <span class="chord">E</span>아름다운 동산<span class="chord">A</span>에서
+내게 준 그 귀한<span class="chord">D</span>언약 <span class="chord">E</span>어이하여 잊을<span class="chord">A</span>까
+멀리 떠나간 그<span class="chord">D</span>대를 <span class="chord">E</span>나는 홀로 사모하<span class="chord">Am</span>여
+<span class="chord">Am</span>잊지못할 이 곳에서 <span class="chord">E</span>기다리고 잊노<span class="chord">A</span>라
+<span class="chord">A</span>돌<span class="chord">E</span>아오<span class="chord">Dm</span>라 이곳을 잊지<span class="chord">Am</span>말고
+<span class="chord">Dm</span>돌아오라 소렌토로 돌<span class="chord">E</span>아오<span class="chord">Am</span>라
+
+Torna a Surriento
+Vide 'o mare quant' 'e bello / Vide 'o mare de Surriento
+비대 오 마래 쿠안테 벨로 비데 오 마레 데 수리엔토
+Spira tantu sentimento / Che tesoro tene 'nfunno
+스피라 탄투 센티 멘토 케 테소로 테넨 푼노
+Comme tu a chi tiene mente / Chi ha girato tutto 'o munno
+콤 메 뚜 아 키 티에네 멘테 키 아 지라토 뚜또 오 문노
+Ca scetato 'o faje sunn'a / Nun I'ha visto comm'a cca
+카 쉐타토 오 파예 순 나 눈 라 비스토 콤 마 카
+Guarda, gu'a chitsu ciardino / Guarda attuorno sti sserene
+구아르다 쿠아 키스투 치아르디노/ 구아르도 앗투오르노 스티 쎄레네
+Siente, si'e sti sciure arance / Ca te guardano 'ncantate
+시엔테 시에 스티 슈레 아란체 카 테 구아르다 논 칸타테
+Nu prufumo accusi fino / E te vonno tantu bene
+누 프로푸모 악쿠씨 피노 에 테 본노 탄투 베네
+Dinto 'o core se ne va / Te vulessero vasa
+딘토 오 코레 세 네 바 테 불레 쎄로 바사
+E tu dice "I' parto. addio ! " .. T' alluntane da stu core
+에 투 디체 이 파르토 아디오 탈룬 타네 아 스투 코레
+Da la terra de I'ammore Tiene 'o core 'e nun turn'a Ma nun me lass'a
+다 라 테라 다 람 모 래 티에네 오 코레 에 눈 투르나 마 눈 메 라 싸
+Nun darme stu turmiento Torna a Surriento Famme camp'a
+눈 다르메 스투 투루미엔토 토르나 아 수리엔토 팜 메 깜 빠</div>
+  </div>
+
+  <div id="song-13" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>13. 오 솔레 미오 (O Sole Mio)</h2>
+    <div class="lyrics-container"><span class="chord">D</span>오! 맑은 햇빛 너 참 아름<span class="chord">G</span>답다!
+<span class="chord">A</span>폭풍우 지난 후 너 더욱 <span class="chord">D</span>찬란해
+시원한 바람 솔솔 불어<span class="chord">G</span>올 때
+하늘의 <span class="chord">D</span>밝은 해는 <span class="chord">A</span>비치인<span class="chord">D</span>다!
+<span class="chord">D</span>나의 몸에는 <span class="chord">A</span>사랑스<span class="chord">G</span>런 <span class="chord">A</span>나의 <span class="chord">G</span>햇님만 <span class="chord">A</span>비치인<span class="chord">D</span>다.
+오! <span class="chord">G</span>나의 나의 햇<span class="chord">D</span>님 찬란하<span class="chord">A</span>게 비치인<span class="chord">D</span>다!
+
+Che bella cosa na jurnata 'e <span class="chord">G</span>sole
+<span class="chord">A</span>N'aria serena dopo na tem<span class="chord">D</span>pesta!
+Pe' ll'aria fresca pare già na <span class="chord">G</span>festa
+Che bella <span class="chord">D</span>cosa na jur<span class="chord">A</span>nata 'e <span class="chord">D</span>sole
+<span class="chord">D</span>Ma n'atu sole <span class="chord">A</span>Cchiu' bello, <span class="chord">D</span>oi ne'
+<span class="chord">A</span>'O sole <span class="chord">G</span>mio <span class="chord">A</span>Sta 'nfronte a <span class="chord">D</span>te!
+'O <span class="chord">G</span>sole, 'o sole <span class="chord">D</span>mio Sta 'nfronte a <span class="chord">A</span>te Sta 'nfronte a <span class="chord">D</span>te!</div>
+  </div>
+
+  <div id="song-14" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>14. 산타루치아</h2>
+    <div class="lyrics-container"><span class="chord">A</span>창공에 빛난 <span class="chord">E</span>별 물<span class="chord">D</span>위에 어리<span class="chord">A</span>어
+<span class="chord">A</span>바람은 고요<span class="chord">D</span>히 불어오<span class="chord">A</span>누나
+<span class="chord">A</span>창공에 빛난 <span class="chord">E</span>별 물<span class="chord">D</span>위에 어리<span class="chord">A</span>어
+<span class="chord">A</span>바람은 고요<span class="chord">D</span>히 불어오<span class="chord">A</span>누나
+<span class="chord">A</span>내 배는 <span class="chord">E</span>살같이 바다를 <span class="chord">A</span>지난다 산타루<span class="chord">D</span>치아 산<span class="chord">E</span>타루<span class="chord">A</span>치아
+<span class="chord">A</span>내 배는 <span class="chord">E</span>살같이 바다를 <span class="chord">A</span>지난다 산타루<span class="chord">D</span>치아 산<span class="chord">E</span>타루<span class="chord">A</span>치아
+
+아름다운 동산 행복의 나폴리
+산천과 초목을 기다리누나
+아름다운 동산 행복의 나폴리
+산천과 초목을 기다리누나
+정든~ 나라에 행복아 길어라
+산타루치아 산타루치아
+정든~ 나라에 행복아 길어라
+산타루치아 산타루치아</div>
+  </div>
+
+  <div id="song-15" class="page">
+    <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
+    <h2>15. 애니로리 (1825)</h2>
+    <div class="lyrics-container">옛날 <span class="chord">C</span>거닐던 강<span class="chord">F</span>가에 이<span class="chord">C</span>슬 젖은 풀<span class="chord">G</span>잎
+그리<span class="chord">C</span>워라 애니 <span class="chord">F</span>로리 언<span class="chord">C</span>제나 <span class="chord">G</span>오려<span class="chord">C</span>나
+그대와 <span class="chord">G</span>만나<span class="chord">C</span>던 세<span class="chord">Am</span>월 흘<span class="chord">Dm</span>렀어<span class="chord">E7</span>도
+그리<span class="chord">C</span>워라 <span class="chord">F</span>애니 <span class="chord">C</span>로리 꿈속에 <span class="chord">G</span>보이<span class="chord">C</span>네
+
+백옥과 같은 네 얼굴 숙인 네 목에
+샛별같은 눈동자는 맑고도 맑아라
+온 세상 이 땅에 다시는 못 보리
+보고싶은 애니로리 내 어이 잊으랴</div>
+  </div>
+
+</body>
+</html>
