@@ -53,6 +53,31 @@
       font-weight: bold; 
       cursor: pointer; 
     }
+    .song-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto 20px;
+    }
+    .song-navigation .btn-back {
+      margin: 0;
+    }
+    .btn-song-nav {
+      min-width: 44px;
+      min-height: 44px;
+      padding: 8px 12px;
+      border: 1px solid #ffffff;
+      border-radius: 6px;
+      background-color: #0000a0;
+      color: #ffffff;
+      font-size: 1.4em;
+      cursor: pointer;
+    }
+    .btn-song-nav:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
     
     /* 가사 영역 */
     .lyrics-container { 
@@ -73,6 +98,46 @@
       document.getElementById(pageId).classList.add('active');
       window.scrollTo(0, 0);
     }
+
+    function changeSong(direction) {
+      const activeSong = document.querySelector('.page.active[id^="song-"]');
+      if (!activeSong) return;
+
+      const songNumber = Number(activeSong.id.replace('song-', ''));
+      const nextSongNumber = songNumber + direction;
+      const nextPage = document.getElementById(`song-${nextSongNumber}`);
+
+      if (nextPage) showPage(nextPage.id);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const songPages = [...document.querySelectorAll('.page[id^="song-"]')];
+
+      songPages.forEach((page, index) => {
+        const backButton = page.querySelector('.btn-back');
+        const navigation = document.createElement('div');
+        navigation.className = 'song-navigation';
+
+        const previousButton = document.createElement('button');
+        previousButton.className = 'btn-song-nav';
+        previousButton.type = 'button';
+        previousButton.textContent = '←';
+        previousButton.setAttribute('aria-label', 'Previous song');
+        previousButton.disabled = index === 0;
+        previousButton.addEventListener('click', () => changeSong(-1));
+
+        const nextButton = document.createElement('button');
+        nextButton.className = 'btn-song-nav';
+        nextButton.type = 'button';
+        nextButton.textContent = '→';
+        nextButton.setAttribute('aria-label', 'Next song');
+        nextButton.disabled = index === songPages.length - 1;
+        nextButton.addEventListener('click', () => changeSong(1));
+
+        backButton.before(navigation);
+        navigation.append(previousButton, backButton, nextButton);
+      });
+    });
   </script>
 </head>
 <body>
@@ -122,7 +187,7 @@
   <div id="song-2" class="page">
     <button class="btn-back" onclick="showPage('main-page')">← 메인 페이지로 돌아가기</button>
     <h2>2. 메기의 추억</h2>
-    <div class="lyrics-container"><span class="chord">C</span>옛날에 금잔디 동산<span class="chord">F</span>에 메기 같<span class="chord">C</span>이 앉아서 놀던 <span class="chord">G</span>곳
+    <div class="lyrics-container"><span class="chord">G</span><span class="chord">C</span>옛날에 금잔디 동산<span class="chord">F</span>에 메기 같<span class="chord">C</span>이 앉아서 놀던 <span class="chord">G</span>곳
 물레<span class="chord">C</span>방아소리 들린<span class="chord">F</span>다 메기<span class="chord">C</span>야 내 희미<span class="chord">G</span>한 옛 생<span class="chord">C</span>각<span class="chord">C7</span>
 동산<span class="chord">F</span>수풀은 우거지<span class="chord">C</span>고 장미화<span class="chord">G</span>는 피어 만발하였다
 물레<span class="chord">C</span>방아 소리 그쳤<span class="chord">F</span>다
@@ -380,3 +445,4 @@ Che bella <span class="chord">D</span>cosa na jur<span class="chord">A</span>nat
 
 </body>
 </html>
+
